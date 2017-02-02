@@ -405,7 +405,7 @@ public class Asset {
         for (GovernanceArtifactConfiguration configuration : configurations) {
             shortNames.add(configuration.getSingularLabel());
         }
-        return Response.ok().entity(shortNames).build();
+        return Response.ok().entity(shortNames).header("Access-Control-Allow-Origin","*").build();
     }
 
 
@@ -680,7 +680,7 @@ public class Asset {
             if (artifact != null) {
                 TypedList<GenericArtifact> typedList = new TypedList<>(GenericArtifact.class, shortName,
                                                                        Arrays.asList(artifact), null);
-                return Response.ok().entity(typedList).build();
+                return Response.ok().entity(typedList).header("Access-Control-Allow-Origin","*").build();
 
                 // Check whether artifact is actually does not exists or we are getting null because of anonymous user.
             } else if (isAnonymousUser()) {
