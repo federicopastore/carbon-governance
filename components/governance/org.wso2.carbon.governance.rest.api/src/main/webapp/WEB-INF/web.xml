@@ -41,6 +41,10 @@
 		<servlet-class>
 			org.apache.cxf.transport.servlet.CXFServlet
 		</servlet-class>
+		<init-param> 
+           <param-name>services-list-path</param-name> 
+           <param-value>/servicelist</param-value> 
+         </init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
